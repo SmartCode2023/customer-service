@@ -1,18 +1,33 @@
 from rest_framework import serializers
 
 from apps.customers.models.customer import Customer, Phone
+from apps.shared.shared_api.shared_serializers.ShortSerializers import CustomerSerializerShort, PhoneSerializerShort
 
-
-class PhoneSerializer(serializers.ModelSerializer):
+class PhoneViewSerializer(serializers.ModelSerializer):
     """
     Phone serializer for viewing.
     """
+    customer = CustomerSerializerShort(read_only=True)
     class Meta:
         model = Phone
         fields = [
             "id",
             "phoneType",
-            "phoneNumber"
+            "phoneNumber",
+            "customer"
+        ]
+        
+class PhoneCreateSerializers(serializers.ModelSerializer):
+    '''
+    Phone serializer for creation.
+    '''
+    class Meta:
+        model = Phone
+        fields = [
+            "id",
+            "phoneType",
+            "phoneNumber",
+            "customer"
         ]
 
 
@@ -20,7 +35,7 @@ class CustomerViewSerializer(serializers.ModelSerializer):
     """
     Customer serializer for viewing.
     """
-    phone_numbers = PhoneSerializer(many=True, read_only=True)
+    phone_numbers = PhoneSerializerShort(many=True, read_only=True)
 
     class Meta:
         model = Customer
@@ -41,6 +56,6 @@ class CustomerCreateSerializers(serializers.ModelSerializer):
         fields = [
             "id",
             "customerType",
-            "phone_numbers",
-            "user"
+            "user",
+            "phone_numbers"
         ]

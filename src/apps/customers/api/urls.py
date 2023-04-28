@@ -1,10 +1,11 @@
 from rest_framework.routers import DefaultRouter
 
-from apps.users.api.views import UserViewSet
+from apps.customers.api.views.customer_view_set import CustomerViewSet, PhoneViewSet
 
 router = DefaultRouter()
 
-router.register(r"", UserViewSet, basename="customers")
+router.register(r"customers", CustomerViewSet, basename="customers")
+router.register(r"phones",PhoneViewSet, basename="phones" )
 
 urlpatterns = []
 

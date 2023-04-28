@@ -1,42 +1,26 @@
 # File which contains the SHORT serializers for each model
 from rest_framework import serializers
 
-# User and Person Model
-from apps.users.models.user import User, Person
-
+# Customer and Phone Short serializers
+from apps.customers.models.customer import Phone, Customer
 # --------------------------------------------SHORT SERIALIZERS--------------------------------------------
 
-# User and Person serializers
-class UserSerializerShort(serializers.ModelSerializer):
+class PhoneSerializerShort(serializers.ModelSerializer):
     '''
-    User serializer SHORT
-        - id
-        - first_name
-        - last_name
-        - email
-        - phone_number
-        - identification_type
-        - identification_number
-        - role
+    Phone Serializer Short
+    - phoneType: Nacional/Internacional
+    - phoneNumber
     '''
     
     class Meta:
-        model = User
-        fields = ('id', 'first_name', 'last_name', 'email', 'phone_number', 'identification_type', 'identification_number', 'role')
+        model = Phone
+        fields = ("phoneType", "phoneNumber")
         
-class PersonSerializerShort(serializers.ModelSerializer):
+class CustomerSerializerShort(serializers.ModelSerializer):
     '''
-    Person serializer SHORT
-        - id
-        - first_name
-        - last_name
-        - email
-        - phone_number
-        - identification_type
-        - identification_number
-    '''
+    Customer Serializer Short
     
+    '''
     class Meta:
-        model = Person
-        fields = ('id', 'first_name', 'last_name', 'email', 'phone_number', 'identification_type', 'identification_number')
-    
+        model = Customer
+        fields = ("customerType", "user")

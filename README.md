@@ -1,4 +1,4 @@
-# Backend Rest
+# Customer Service
 
 ## Requisitos
 
@@ -13,7 +13,7 @@ El proyecto está configurado para correr en un entorno de desarrollo con Docker
 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/SmartCode2023/user-service.git
+git clone https://github.com/SmartCode2023/customer-service.git
 ```
 
 2. Crear el archivo .env con las variables de entorno (Modificar según sea necesario)
@@ -35,7 +35,7 @@ docker compose up -d
 ```
 
 El proyecto está configurado para correr en 
-http://localhost:8100.
+http://localhost:8200.
 
 Para ver los logs de los contenedores
 
