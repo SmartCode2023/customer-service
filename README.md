@@ -37,6 +37,9 @@ docker compose up -d
 El proyecto está configurado para correr en 
 http://localhost:8200.
 
+La base de datos está configurada para correr en
+http://localhost:5438.
+
 Para ver los logs de los contenedores
 
 ```bash
