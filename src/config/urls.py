@@ -10,9 +10,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="#USER SERVICE REST API",
+        title="#CUSTOMER SERVICE REST API",
         default_version="v1",
-        description="USER API REST for Arquitectura de Software. Created: PUJ.",
+        description="CUSTOMER API REST for Arquitectura de Software. Created: PUJ.",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="paladavid@hotmail.com"),
         license=openapi.License(name="BSD License"),
@@ -22,7 +22,7 @@ schema_view = get_schema_view(
 )
 
 # Importing apps urls
-from apps.users.api.urls import urlpatterns as users_urls
+from apps.customers.api.urls import urlpatterns as customers_urls
 
 # API urls
 urlpatterns = [
@@ -41,7 +41,7 @@ urlpatterns = [
         r"^redoc/$", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"
     ),
     path("admin/", admin.site.urls),
-    path("users/", include(users_urls)),
+    path("customers/", include(customers_urls)),
 ]
 
 # Media files

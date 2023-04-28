@@ -30,7 +30,7 @@ BASE_APPS = [
 
 LOCAL_APPS = [
     "apps.shared",
-    "apps.users",
+    "apps.customers",
 ]
 
 THIRD_APPS = [
@@ -92,7 +92,7 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 
-AUTH_USER_MODEL = "users.User"
+#AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -120,7 +120,7 @@ DATABASES = {
         "USER": os.environ.get("SQL_USER", "user"),
         "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
         "HOST": os.environ.get("SQL_HOST", "db"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
+        "PORT": os.environ.get("SQL_PORT", "5438"),
     }
 }
 
